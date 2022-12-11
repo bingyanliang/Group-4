@@ -9,8 +9,10 @@ test_data0<-na.omit(test_data0)
 
 library(dplyr)
 
-ds_grp_region = test_data0 %>% group_by(product_id)  %>%
-  summarise(mean_star_rating = mean(star_rating),
+
+data = test_data0 %>% group_by(product_parent)  %>%
+  summarise(ave_rating = mean(star_rating),
             .groups = 'drop')
 
-View(ds_grp_region)
+
+#View(data)
